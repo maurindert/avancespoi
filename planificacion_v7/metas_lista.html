@@ -1,0 +1,66 @@
+<h1>Metas del POI</h1>
+
+<!-- CONTENEDOR SUPERIOR -->
+<div style="display:flex; flex-direction:column; gap:15px; margin-bottom:15px;">
+    
+    <!-- Fila 1: Botones y Buscador -->
+    <div style="display:flex; justify-content:space-between; align-items:center;">
+        <div> 
+            <a href="./secciones/planificacion/reporte_avances.php" style="text-decoration:none; display:inline-flex; align-items:center; gap:5px;" target="_blank"> 
+                <img src="fuentestra/imagenes/bot/128x128/report.png" style="width:16px; height:16px;" /> Reporte Dinamico - Totales
+            </a> 
+        </div>
+
+        <!-- BUSCADOR -->
+        <form class="formFind" action="javascript:listarMetas();" style="display:flex; align-items:center; gap:5px;">
+            <b>BUSCAR</b>
+            <input type="text" id="listaMetasCadenaBuscar" title="Ingrese lo que desea buscar" />
+            <input type="submit" value=""/>
+        </form>
+    </div>
+
+    <!-- Fila 2: Filtros -->
+    <div style="display:flex; align-items:center; gap:15px; background-color:#f9f9f9; padding:10px; border-radius:5px; border:1px solid #ddd;">
+        <div style="display:flex; align-items:center; gap:5px;">
+            <b>Objetivo Estrategico:</b>
+            <select id="filtroOE" onchange="listarMetas();" style="height:25px; max-width:200px;">
+                <option value="">Todos</option>
+            </select>
+        </div>
+
+        <div style="display:flex; align-items:center; gap:5px;">
+            <b>Indicador:</b>
+            <select id="filtroIndicador" onchange="listarMetas();" style="height:25px; max-width:200px;">
+                <option value="">Todos</option>
+            </select>
+        </div>
+
+        <div style="display:flex; align-items:center; gap:5px;">
+            <b>Meta:</b>
+            <select id="filtroMeta" onchange="listarMetas();" style="height:25px; max-width:200px;">
+                <option value="">Todos</option>
+            </select>
+        </div>
+
+        <div style="display:flex; align-items:center; gap:5px;">
+            <b>Año:</b>
+            <select id="filtroAnio" onchange="listarMetas();" style="height:25px;">
+                <option value="">Todos</option>
+                <option value="2026">2026</option>
+                <option value="2027">2027</option>
+                <option value="2028">2028</option>
+            </select>
+        </div>
+
+        <label style="display:flex; align-items:center; gap:5px; cursor:pointer;">
+            <input type="checkbox" id="listaMetasMostrarAnulados" onchange="listarMetas();" />
+            <b>Mostrar Anulados</b>
+        </label>
+    </div>
+
+</div>
+
+<!-- LISTA -->
+<div id="listaMetas"></div>
+
+<input type="hidden" id="listaMetasAccionPosSeleccionar" value="{accionPosSeleccionar}" />

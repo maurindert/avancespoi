@@ -1,0 +1,3 @@
+Verificaciones - Avances de Planificacion#avancespoi
+Verificaciones - Anular metas de Planificacion#MetasAnular
+Verificaciones - Anular avances de Planificacion#AvancesAnular
