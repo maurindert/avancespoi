@@ -453,8 +453,8 @@
 
     $matriz = array();
     $titulos = array('Ver', 'Anular', 'Objetivo', 'Nivel', 'Indicador', 'Meta', 'Tipo', 'Avances',
-        'Porcentaje Total Avanzado (Año 2026)', 'Porcentaje Total Avanzado (Año 2027)',
-        'Porcentaje Total Avanzado (Año 2028)');
+        'Porcentaje Total Avanzado (Aï¿½o 2026)', 'Porcentaje Total Avanzado (Aï¿½o 2027)',
+        'Porcentaje Total Avanzado (Aï¿½o 2028)');
     foreach ($titulos as $i => $titulo) {
         $matriz[0][$i]['html'] = $titulo;
         $matriz[0][$i]['style'] = 'text-align:left;';
@@ -480,7 +480,7 @@
         $matriz[$contador][0]['html'] = $activo
             ? '<div style="width:16px;height:16px;"><a href="javascript:cargarSeccion(\'planificacion\',\'avancespoi_vista\',\'idMeta=' . $id . '\');" title="Ver avances"><img src="fuentestra/imagenes/bot/16x16/search.png" style="width:16px; height:16px;" /></a></div>' : '';
         $matriz[$contador][1]['html'] = $activo
-            ? '<div style="width:16px;height:16px;"><a class="permiso_MetasAnular" href="javascript:dialogo(\'La meta quedará anulada y dejará de incluirse en los cálculos y reportes. ¿Desea continuar?\',\'si:anularMeta(' . $id . ');|no\',\'eliminar_campos\');" title="Anular"><img src="fuentestra/imagenes/bot/16x16/delete.png" style="width:16px; height:16px;" /></a></div>' : '';
+            ? '<div style="width:16px;height:16px;"><a class="permiso_MetasAnular" href="javascript:dialogo(\'La meta quedarï¿½ anulada y dejarï¿½ de incluirse en los cï¿½lculos y reportes. ï¿½Desea continuar?\',\'si:anularMeta(' . $id . ');|no\',\'eliminar_campos\');" title="Anular"><img src="fuentestra/imagenes/bot/16x16/delete.png" style="width:16px; height:16px;" /></a></div>' : '';
         $matriz[$contador][2]['html'] = htmlentities($row['objetivo'], ENT_QUOTES, 'UTF-8');
         $matriz[$contador][3]['html'] = htmlentities($row['nivel'], ENT_QUOTES, 'UTF-8');
         $matriz[$contador][4]['html'] = htmlentities($row['indicador'], ENT_QUOTES, 'UTF-8');

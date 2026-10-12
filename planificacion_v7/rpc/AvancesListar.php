@@ -38,10 +38,10 @@ $db->set_query($sql);
 $db->execute_query();
 
 $matriz = array();
-$titulos = array('Editar', 'Anular', 'Año', 'Cantidad', 'Hombres', 'Mujeres', 'Instituciones',
+$titulos = array('Editar', 'Anular', 'Aï¿½o', 'Cantidad', 'Hombres', 'Mujeres', 'Instituciones',
     '% Equivalente', 'Fecha Avance', 'Fecha Registro', 'Logros', 'Dificultades', 'Observaciones');
 if ($campoHabilitado['expediente']) $titulos[] = 'Expediente';
-if ($campoHabilitado['resolucion']) $titulos[] = 'Resolución';
+if ($campoHabilitado['resolucion']) $titulos[] = 'Resoluciï¿½n';
 if ($campoHabilitado['excel']) $titulos[] = 'Excel';
 if ($campoHabilitado['pdf']) $titulos[] = 'PDF';
 foreach ($titulos as $i => $titulo) {
@@ -58,7 +58,7 @@ while ($row = $db->get_array()) {
     $matriz[$c][0]['html'] = ($activo && $esPropio)
         ? '<div style="width:16px;height:16px;"><a href="javascript:cargarSeccion(\'planificacion\',\'avancespoi_ae\',\'idMeta=' . $idMeta . '&idAvanceEdit=' . $id . '\',\'ventana\');" title="Editar"><img src="fuentestra/imagenes/bot/16x16/edit.png" style="width:16px; height:16px;" /></a></div>' : '';
     $matriz[$c][1]['html'] = ($activo && $esPropio)
-        ? '<div style="width:16px;height:16px;"><a class="permiso_AvancesAnular" href="javascript:dialogo(\'El avance quedará anulado y dejará de incluirse en los cálculos y reportes. ¿Desea continuar?\',\'si:anularAvance(' . $id . ');|no\',\'eliminar_campos\');" title="Anular"><img src="fuentestra/imagenes/bot/16x16/delete.png" style="width:16px; height:16px;" /></a></div>' : '';
+        ? '<div style="width:16px;height:16px;"><a class="permiso_AvancesAnular" href="javascript:dialogo(\'El avance quedarï¿½ anulado y dejarï¿½ de incluirse en los cï¿½lculos y reportes. ï¿½Desea continuar?\',\'si:anularAvance(' . $id . ');|no\',\'eliminar_campos\');" title="Anular"><img src="fuentestra/imagenes/bot/16x16/delete.png" style="width:16px; height:16px;" /></a></div>' : '';
     $columna = 2;
     foreach (array('anio', 'cantidad', 'hombres', 'mujeres', 'instituciones', 'porcentaje_avance',
         'fecha_avance', 'fecha_registro', 'logros', 'dificultades', 'observaciones') as $clave) {

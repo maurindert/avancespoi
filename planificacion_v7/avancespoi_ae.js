@@ -17,9 +17,9 @@ function inicializar_planificacion_avancespoi_ae() {
         var acumulado = parseInt($('#acumuladoMeta' + periodo).val(), 10) || 0;
         var disponible = Math.max(maximo - acumulado, 0);
         if (maximo > 0 && $('#trCantidad').css('display') != 'none') {
-            $('#cantidadDisponible').html('Disponible para el año ' + periodo + ': <b>' + disponible + '</b> de ' + maximo);
+            $('#cantidadDisponible').html('Disponible para el aï¿½o ' + periodo + ': <b>' + disponible + '</b> de ' + maximo);
         } else if ($('#trCantidad').css('display') != 'none') {
-            $('#cantidadDisponible').html('<b>La meta no tiene un valor proyectado para este año.</b>');
+            $('#cantidadDisponible').html('<b>La meta no tiene un valor proyectado para este aï¿½o.</b>');
         } else {
             $('#cantidadDisponible').html('');
         }
@@ -108,14 +108,14 @@ function agregarEditarAvances() {
         var acumulado = parseInt($('#acumuladoMeta' + datos['periodo']).val(), 10) || 0;
         var cantidad = parseInt(datos['cantidad'], 10) || 0;
         if (maximo <= 0) {
-            dialogo('La meta no tiene un valor proyectado para el año ' + datos['periodo'] + '.');
+            dialogo('La meta no tiene un valor proyectado para el aï¿½o ' + datos['periodo'] + '.');
             return;
         }
         if (acumulado + cantidad > maximo) {
             var disponible = Math.max(maximo - acumulado, 0);
-            dialogo('La cantidad ingresada (' + cantidad + ') supera el máximo disponible para el año ' +
+            dialogo('La cantidad ingresada (' + cantidad + ') supera el mï¿½ximo disponible para el aï¿½o ' +
                 datos['periodo'] + '. Ya se registraron ' + acumulado + ' de ' + maximo +
-                '. Puede cargar como máximo ' + disponible + '.');
+                '. Puede cargar como mï¿½ximo ' + disponible + '.');
             $('#cantidad').focus().select();
             return;
         }
@@ -125,21 +125,21 @@ function agregarEditarAvances() {
     var archivoPdf = document.getElementById('archivoPdf');
     if ($('#trExcel').css('display') != 'none' && archivoExcel && archivoExcel.files && archivoExcel.files.length > 0) {
         if (!/\.(xls|xlsx)$/i.test(archivoExcel.files[0].name)) {
-            dialogo('El archivo Excel debe tener extensión .xls o .xlsx.');
+            dialogo('El archivo Excel debe tener extensiï¿½n .xls o .xlsx.');
             return;
         }
         archivos.push({archivo: archivoExcel.files[0], prefijo: 'excel'});
     }
     if ($('#trPdf').css('display') != 'none' && archivoPdf && archivoPdf.files && archivoPdf.files.length > 0) {
         if (!/\.pdf$/i.test(archivoPdf.files[0].name)) {
-            dialogo('El archivo PDF debe tener extensión .pdf.');
+            dialogo('El archivo PDF debe tener extensiï¿½n .pdf.');
             return;
         }
         archivos.push({archivo: archivoPdf.files[0], prefijo: 'pdf'});
     }
     for (var a = 0; a < archivos.length; a++) {
         if (archivos[a].archivo.size > 10485760) {
-            dialogo('Cada archivo puede tener un tamaño máximo de 10 MB.');
+            dialogo('Cada archivo puede tener un tamaï¿½o mï¿½ximo de 10 MB.');
             return;
         }
     }

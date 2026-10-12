@@ -3,7 +3,7 @@ header('Content-Type: text/html; charset=Windows-1252');
 
 require_once '../../fuentestra/funciones/php/fecha.php';
 // -----------------------------
-// CONEXIÓN PDO
+// CONEXIï¿½N PDO
 // -----------------------------
 try {
   $db = new PDO(
@@ -13,7 +13,7 @@ try {
   );
   $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 } catch (PDOException $e) {
-  die("Error de conexión: " . $e->getMessage());
+  die("Error de conexiï¿½n: " . $e->getMessage());
 }
 
 // -----------------------------
@@ -296,7 +296,7 @@ $promedioGeneral = ($total > 0) ? round($suma / $total, 2) : 0;
         color: #065f46;
       }
 
-      /* Botones de acción */
+      /* Botones de acciï¿½n */
       .btn-action {
         padding: 15px 18px;
         border-radius: 6px;
@@ -325,14 +325,14 @@ $promedioGeneral = ($total > 0) ? round($suma / $total, 2) : 0;
         background-color: #475569;
       }
 
-      /* Configuración de la hoja al imprimir */
+      /* Configuraciï¿½n de la hoja al imprimir */
       @page {
         size: A4 portrait;
         margin: 12mm 10mm;
       }
 
-      /* REGLAS COMPARTIDAS: Impresión física (@media print) y Exportación a PDF (.pdf-mode) */
-      /* REGLAS COMPARTIDAS: Impresión física (@media print) y Exportación a PDF (.pdf-mode) */
+      /* REGLAS COMPARTIDAS: Impresiï¿½n fï¿½sica (@media print) y Exportaciï¿½n a PDF (.pdf-mode) */
+      /* REGLAS COMPARTIDAS: Impresiï¿½n fï¿½sica (@media print) y Exportaciï¿½n a PDF (.pdf-mode) */
 @media print,
 .pdf-mode {
   body {
@@ -389,7 +389,7 @@ $promedioGeneral = ($total > 0) ? round($suma / $total, 2) : 0;
     margin-bottom: 10px !important;
   }
 
-  /* Ajuste de contenedor del gráfico */
+  /* Ajuste de contenedor del grï¿½fico */
   .chart-wrapper {
     width: 100% !important;
     max-width: 100% !important;
@@ -462,7 +462,7 @@ $promedioGeneral = ($total > 0) ? round($suma / $total, 2) : 0;
 
         <div class="kpi-card danger">
           <div class="kpi-value" style="color: var(--color-danger);"><?= $criticas ?></div>
-          <div class="kpi-label">Críticas (&lt;50%)</div>
+          <div class="kpi-label">Crï¿½ticas (&lt;50%)</div>
         </div>
 
         <div class="kpi-card warning">
@@ -476,7 +476,7 @@ $promedioGeneral = ($total > 0) ? round($suma / $total, 2) : 0;
         </div>
       </div>
 
-      <!-- GRÁFICO -->
+      <!-- GRï¿½FICO -->
       <div class="section-card">
         <h3 class="section-title">Nivel de Avance por Meta</h3>
         <div class="chart-wrapper">
@@ -486,7 +486,7 @@ $promedioGeneral = ($total > 0) ? round($suma / $total, 2) : 0;
 
       <!-- TABLA -->
       <div class="section-card">
-        <h3 class="section-title">Detalle de Ejecución</h3>
+        <h3 class="section-title">Detalle de Ejecuciï¿½n</h3>
         <div class="table-wrapper">
           <table>
             <thead>

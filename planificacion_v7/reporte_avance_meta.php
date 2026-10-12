@@ -203,9 +203,9 @@ $detalle = $stmt->fetchAll(PDO::FETCH_ASSOC);
     </div>
 
     <div class="graficos">
-        <div class="tarjeta grafico" style="display:<?php echo $campos['cantidad'] ? 'block' : 'none'; ?>;"><h2>Planificado y ejecutado por año</h2><canvas id="graficoCantidad"></canvas></div>
-        <div class="tarjeta grafico" style="display:<?php echo $campos['fecha_avance'] ? 'block' : 'none'; ?>;"><h2>Registros de avance por año</h2><canvas id="graficoFechas"></canvas></div>
-        <div class="tarjeta grafico" style="display:<?php echo ($campos['hombres'] || $campos['mujeres'] || $campos['instituciones']) ? 'block' : 'none'; ?>;"><h2>Desglose acumulado por año</h2><canvas id="graficoDesglose"></canvas></div>
+        <div class="tarjeta grafico" style="display:<?php echo $campos['cantidad'] ? 'block' : 'none'; ?>;"><h2>Planificado y ejecutado por aï¿½o</h2><canvas id="graficoCantidad"></canvas></div>
+        <div class="tarjeta grafico" style="display:<?php echo $campos['fecha_avance'] ? 'block' : 'none'; ?>;"><h2>Registros de avance por aï¿½o</h2><canvas id="graficoFechas"></canvas></div>
+        <div class="tarjeta grafico" style="display:<?php echo ($campos['hombres'] || $campos['mujeres'] || $campos['instituciones']) ? 'block' : 'none'; ?>;"><h2>Desglose acumulado por aï¿½o</h2><canvas id="graficoDesglose"></canvas></div>
         <div class="tarjeta grafico" style="display:<?php echo $campos['dpto_dist_col'] ? 'block' : 'none'; ?>;">
             <h2><?php echo $campos['cantidad'] ? 'Cantidad por ubicacion' : 'Registros por ubicacion'; ?></h2>
             <?php if (count($ubicaciones) > 0): ?><canvas id="graficoUbicacion"></canvas><?php else: ?><div class="vacio">No existen ubicaciones cargadas para esta meta.</div><?php endif; ?>
@@ -216,7 +216,7 @@ $detalle = $stmt->fetchAll(PDO::FETCH_ASSOC);
         <h2>Detalle de avances</h2>
         <div class="tabla"><table>
             <thead><tr>
-                <th>Año</th>
+                <th>Aï¿½o</th>
                 <th style="display:<?php echo $campos['fecha_avance'] ? 'table-cell' : 'none'; ?>;">Fecha</th>
                 <th style="display:<?php echo $campos['cantidad'] ? 'table-cell' : 'none'; ?>;">Cantidad</th>
                 <th style="display:<?php echo $campos['hombres'] ? 'table-cell' : 'none'; ?>;">Hombres</th>
@@ -227,7 +227,7 @@ $detalle = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 <th style="display:<?php echo $campos['dificultades'] ? 'table-cell' : 'none'; ?>;">Dificultades</th>
                 <th style="display:<?php echo $campos['observaciones'] ? 'table-cell' : 'none'; ?>;">Observaciones</th>
                 <th style="display:<?php echo $campos['expediente'] ? 'table-cell' : 'none'; ?>;">Expediente</th>
-                <th style="display:<?php echo $campos['resolucion'] ? 'table-cell' : 'none'; ?>;">Resolución</th>
+                <th style="display:<?php echo $campos['resolucion'] ? 'table-cell' : 'none'; ?>;">Resoluciï¿½n</th>
                 <th style="display:<?php echo $campos['excel'] ? 'table-cell' : 'none'; ?>;">Excel</th>
                 <th style="display:<?php echo $campos['pdf'] ? 'table-cell' : 'none'; ?>;">PDF</th>
             </tr></thead>

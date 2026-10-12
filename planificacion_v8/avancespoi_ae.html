@@ -1,0 +1,121 @@
+<h1 style="text-align:center; margin-bottom:8px;">{accion} avance de meta</h1>
+<div style="text-align:center; margin-bottom:12px;">
+    <b>Meta:</b> {nombreMeta} &nbsp;&nbsp; <b>Tipo:</b> {tipoMeta}
+</div>
+<form class="form1" action="javascript:agregarEditarAvances();">
+    <input type="hidden" id="idAvanceEdit" value="{idAvance}" />
+    <input type="hidden" id="idMetaAvance" value="{idMeta}" />
+    <input type="hidden" id="maximoMeta2026" value="{maximo2026}" />
+    <input type="hidden" id="maximoMeta2027" value="{maximo2027}" />
+    <input type="hidden" id="maximoMeta2028" value="{maximo2028}" />
+    <input type="hidden" id="acumuladoMeta2026" value="{acumulado2026}" />
+    <input type="hidden" id="acumuladoMeta2027" value="{acumulado2027}" />
+    <input type="hidden" id="acumuladoMeta2028" value="{acumulado2028}" />
+    <input type="hidden" id="excelActualNombre" value="{excelNombre}" />
+    <input type="hidden" id="pdfActualNombre" value="{pdfNombre}" />
+
+    <table border="0" cellpadding="0" cellspacing="0" style="width:100%; min-width:820px; max-width:1000px; margin:0 auto;">
+        <tr id="trDptoDistCol" style="display:{mostrar_dpto_dist_col};">
+            <td colspan="2" style="padding-bottom:10px;">
+                <table border="0" cellpadding="2" cellspacing="2" style="width:100%; table-layout:fixed; border:1px solid #d9d9d9; background-color:#fafafa;">
+                    <tr>
+                        <td valign="top" style="padding:8px;">
+                            <table border="0" cellpadding="2" cellspacing="2" style="width:100%;">
+                                <tr>
+                                    <td class="campo" style="width:105px;">* Departamento</td>
+                                    <td>
+                                        <div style="position:relative;">
+                                            <div id="tierRecibosAgEd_mostrarOcultarLupaDepartamento" style="width:16px; height:16px; text-align:center; position:absolute; right:7px; top:7px;">
+                                                <a href="javascript:cargarSeccion('tierra','departamentos_lista','accionPosSeleccionar=fn:seleccionarDepartamentoTierraRecibos','ventana');" title="Seleccionar"><img src="fuentestra/imagenes/bot/16x16/search.png" style="width:16px; height:16px;" /></a>
+                                            </div>
+                                            <input type="text" id="tierRecibosAgEd_idDpto" value="{idDpto}" onblur="denominar('tierra','departamentoDenominar',this.value,'tierRecibosAgEd_idDptoHtml');verificarCampoDptoTierraRecibos();" onkeypress="return soloNumeros(event)" style="width:100%; height:30px; padding-right:30px; box-sizing:border-box;" />
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr><td colspan="2" class="campo" align="center"><div id="tierRecibosAgEd_idDptoHtml" style="background-color:#efefef; padding:7px; min-height:13px;">{dpto}</div></td></tr>
+                            </table>
+                        </td>
+                        <td valign="top" style="padding:8px;">
+                            <table border="0" cellpadding="2" cellspacing="2" style="width:100%;">
+                                <tr>
+                                    <td class="campo" style="width:78px;">* Distrito</td>
+                                    <td>
+                                        <div style="position:relative;">
+                                            <div id="tierRecibosAgEd_mostrarOcultarLupaDistrito" style="width:16px; height:16px; text-align:center; position:absolute; right:7px; top:7px; display:none;">
+                                                <a href="javascript:seleccionarDistritoTierraRecibos();" title="Seleccionar"><img src="fuentestra/imagenes/bot/16x16/search.png" style="width:16px; height:16px;" /></a>
+                                            </div>
+                                            <input type="text" id="tierRecibosAgEd_idDistrito" value="{idDistrito}" onblur="denominarDistritoTierraRecibos();verificarCampoDistritoTierraRecibos();" disabled="disabled" onkeypress="return soloNumeros(event)" style="width:100%; height:30px; padding-right:30px; box-sizing:border-box;" />
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr><td colspan="2" class="campo" align="center"><div id="tierRecibosAgEd_idDistritoHtml" style="background-color:#efefef; padding:7px; min-height:13px;">{distrito}</div></td></tr>
+                            </table>
+                        </td>
+                        <td valign="top" style="padding:8px;">
+                            <table border="0" cellpadding="2" cellspacing="2" style="width:100%;">
+                                <tr>
+                                    <td class="campo" style="width:78px;">* Colonia</td>
+                                    <td>
+                                        <div style="position:relative;">
+                                            <div id="tierRecibosAgEd_mostrarOcultarLupaColonia" style="width:16px; height:16px; text-align:center; position:absolute; right:7px; top:7px; display:none;">
+                                                <a href="javascript:seleccionarColoniaTierraRecibos();" title="Seleccionar"><img src="fuentestra/imagenes/bot/16x16/search.png" style="width:16px; height:16px;" /></a>
+                                            </div>
+                                            <input type="text" id="tierRecibosAgEd_idColonia" value="{idColonia}" onblur="denominarColoniaTierraRecibos();verificarCampoColoniaTierraRecibos();" disabled="disabled" onkeypress="return soloNumeros(event)" style="width:100%; height:30px; padding-right:30px; box-sizing:border-box;" />
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr><td colspan="2" class="campo" align="center"><div id="tierRecibosAgEd_idColoniaHtml" style="background-color:#efefef; padding:7px; min-height:13px;">{colonia}</div></td></tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px 18px; align-items:start;">
+                    <div style="display:block;">
+                        <table border="0" cellpadding="2" cellspacing="2" style="width:100%;"><tr><td class="campo" style="width:145px;">Periodo</td><td><select id="periodos" style="width:100%; height:30px; box-sizing:border-box;">{periodos}</select></td></tr></table>
+                    </div>
+                    <div id="trCantidad" style="display:{mostrar_cantidad};">
+                        <table border="0" cellpadding="2" cellspacing="2" style="width:100%;"><tr><td class="campo" style="width:145px;">Cantidad total</td><td><input type="number" id="cantidad" min="1" max="2147483647" step="1" value="{cantidad}" style="width:100%; height:30px; box-sizing:border-box;" /><div id="cantidadDisponible" style="font-size:11px; color:#666; padding-top:2px;"></div></td></tr></table>
+                    </div>
+                    <div id="trFechaAvance" style="display:{mostrar_fecha_avance};">
+                        <table border="0" cellpadding="2" cellspacing="2" style="width:100%;"><tr><td class="campo" style="width:145px;">Fecha del avance</td><td><input type="date" id="fechaAvance" value="{fechaAvance}" style="width:100%; height:30px; box-sizing:border-box;" /></td></tr></table>
+                    </div>
+                    <div id="trLogros" style="display:{mostrar_logros};">
+                        <table border="0" cellpadding="2" cellspacing="2" style="width:100%;"><tr><td class="campo" style="width:145px; vertical-align:top;">Logros</td><td><textarea id="logros" rows="2" style="width:100%; min-height:52px; box-sizing:border-box; resize:vertical;">{logros}</textarea></td></tr></table>
+                    </div>
+                    <div id="trExpediente" style="display:{mostrar_expediente};">
+                        <table border="0" cellpadding="2" cellspacing="2" style="width:100%;"><tr><td class="campo" style="width:145px;">Expediente</td><td><input type="text" id="expediente" value="{expediente}" style="width:100%; height:30px; box-sizing:border-box;" /></td></tr></table>
+                    </div>
+                    <div id="trHombres" style="display:{mostrar_hombres};">
+                        <table border="0" cellpadding="2" cellspacing="2" style="width:100%;"><tr><td class="campo" style="width:145px;">Hombres</td><td><input type="number" id="hombres" min="0" max="2147483647" step="1" value="{hombres}" style="width:100%; height:30px; box-sizing:border-box;" /></td></tr></table>
+                    </div>
+                    <div id="trDificultades" style="display:{mostrar_dificultades};">
+                        <table border="0" cellpadding="2" cellspacing="2" style="width:100%;"><tr><td class="campo" style="width:145px; vertical-align:top;">Dificultades</td><td><textarea id="dificultades" rows="2" style="width:100%; min-height:52px; box-sizing:border-box; resize:vertical;">{dificultades}</textarea></td></tr></table>
+                    </div>
+                    <div id="trResolucion" style="display:{mostrar_resolucion};">
+                        <table border="0" cellpadding="2" cellspacing="2" style="width:100%;"><tr><td class="campo" style="width:145px;">Resoluci�n</td><td><input type="text" id="resolucion" value="{resolucion}" style="width:100%; height:30px; box-sizing:border-box;" /></td></tr></table>
+                    </div>
+                    <div id="trMujeres" style="display:{mostrar_mujeres};">
+                        <table border="0" cellpadding="2" cellspacing="2" style="width:100%;"><tr><td class="campo" style="width:145px;">Mujeres</td><td><input type="number" id="mujeres" min="0" max="2147483647" step="1" value="{mujeres}" style="width:100%; height:30px; box-sizing:border-box;" /></td></tr></table>
+                    </div>
+                    <div id="trObservaciones" style="display:{mostrar_observaciones};">
+                        <table border="0" cellpadding="2" cellspacing="2" style="width:100%;"><tr><td class="campo" style="width:145px;">Observaciones</td><td><input type="text" id="observacion" value="{observacion}" style="width:100%; height:30px; box-sizing:border-box;" /></td></tr></table>
+                    </div>
+                    <div id="trInstituciones" style="display:{mostrar_instituciones};">
+                        <table border="0" cellpadding="2" cellspacing="2" style="width:100%;"><tr><td class="campo" style="width:145px;">Instituciones</td><td><input type="number" id="instituciones" min="0" max="2147483647" step="1" value="{instituciones}" style="width:100%; height:30px; box-sizing:border-box;" /></td></tr></table>
+                    </div>
+                    <div id="trExcel" style="display:{mostrar_excel};">
+                        <table border="0" cellpadding="2" cellspacing="2" style="width:100%;"><tr><td class="campo" style="width:145px;">Archivo Excel</td><td><input type="file" id="archivoExcel" accept=".xls, .xlsx, application/vnd.ms-excel, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" style="width:100%; box-sizing:border-box;" /><div id="excelActual" style="font-size:11px; color:#666; padding-top:2px;">{excelActual}</div><div style="font-size:11px; color:#666;">Formatos .xls o .xlsx. M�ximo 10 MB.</div></td></tr></table>
+                    </div>
+                    <div id="trPdf" style="display:{mostrar_pdf};">
+                        <table border="0" cellpadding="2" cellspacing="2" style="width:100%;"><tr><td class="campo" style="width:145px;">Archivo PDF</td><td><input type="file" id="archivoPdf" accept="application/pdf" style="width:100%; box-sizing:border-box;" /><div id="pdfActual" style="font-size:11px; color:#666; padding-top:2px;">{pdfActual}</div><div style="font-size:11px; color:#666;">Formato .pdf. M�ximo 10 MB.</div></td></tr></table>
+                    </div>
+                </div>
+            </td>
+        </tr>
+        <tr><td colspan="2" style="text-align:right; padding-top:10px;"><input type="submit" id="submitAvance" value="Aceptar" /></td></tr>
+    </table>
+</form>

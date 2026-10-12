@@ -31,7 +31,7 @@ foreach (array('fecha_avance', 'cantidad', 'hombres', 'mujeres', 'instituciones'
 }
 if (!$hayCampo) throw new Exception('La meta no tiene campos de carga habilitados');
 if ($campos['cantidad'] && (!is_numeric($meta['valor_meta']) || (int)$meta['valor_meta'] <= 0)) {
-    throw new Exception('La meta no tiene un valor proyectado para el año seleccionado');
+    throw new Exception('La meta no tiene un valor proyectado para el aï¿½o seleccionado');
 }
 
 $anterior = false;
